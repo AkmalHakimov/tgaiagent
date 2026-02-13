@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telegram-ai-agent"
+version = "0.1.0"
+description = "Autonomous Telegram AI agent for private-question answering"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "telethon>=1.36.0",
+  "openai>=1.40.0",
+  "pydantic>=2.7.0",
+  "pydantic-settings>=2.3.0",
+  "aiosqlite>=0.20.0",
+  "tenacity>=8.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2.0",
+  "pytest-asyncio>=0.23.0",
+]
+
+[project.scripts]
+telegram-agent = "agent.app:main"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agent*"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+asyncio_mode = "auto"

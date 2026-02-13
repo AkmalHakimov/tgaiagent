@@ -1,3 +1,19 @@
+Metadata-Version: 2.4
+Name: telegram-ai-agent
+Version: 0.1.0
+Summary: Autonomous Telegram AI agent for private-question answering
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: telethon>=1.36.0
+Requires-Dist: openai>=1.40.0
+Requires-Dist: pydantic>=2.7.0
+Requires-Dist: pydantic-settings>=2.3.0
+Requires-Dist: aiosqlite>=0.20.0
+Requires-Dist: tenacity>=8.3.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.2.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.23.0; extra == "dev"
+
 # Telegram AI Agent (Private Question Responder)
 
 A production-style Telegram agent that logs into your account, watches private chats, reasons over context, executes tools, and sends controlled answers.
